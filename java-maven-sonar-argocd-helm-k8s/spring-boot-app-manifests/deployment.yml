@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: rachidouqa/jenkinstest:latest
+        image: rachidouqa/jenkinstest
         ports:
         - containerPort: 8080

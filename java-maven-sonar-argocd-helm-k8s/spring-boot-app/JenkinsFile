@@ -46,6 +46,12 @@ pipeline {
             }
         }
 
+        stage('Scan') {
+                steps {
+                    sh 'trivy rachidouqa/jenkinstest:${BUILD_NUMBER}'
+                }
+            }
+
         stage('Update Deployment File') {
             environment {
                 GIT_REPO_NAME = "jenkensprojet1"
@@ -65,11 +71,7 @@ pipeline {
                 }
             }
 
-            stage('Scan') {
-                steps {
-                    sh 'trivy rachidouqa/jenkinstest:${BUILD_NUMBER}'
-                }
-            }
+            
         }
 
     }
